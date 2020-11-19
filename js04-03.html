@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 4-3</title>
+    <script>
+        // 계산기의 사칙연산 함수 만들기 
+        // 1번 함수 형태
+        function add1() {
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 합은 : " + (a + b));
+        }
+
+        function sub1() {
+            var a = 10;
+            var b = 5
+            console.log("두 수의 차는 : " + (a - b));
+        }
+
+        function multi1() {
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 곱은 : " + (a * b));
+        }
+
+        function div1() {
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 나눈 몫 : " + (a / b));
+        }
+
+        console.log("-----1번 형태의 함수로 실행 시------");
+        add1();
+        sub1();
+        multi1();
+        div1();
+
+        console.log("------2번 형태의 함수로 실행시-------");
+        // 함수 호출시 매개변수의 갯수와 동일하게 입력
+
+        function add2(a, b) {
+            console.log("두 수의 합은 : " + (a + b));
+        }
+
+        function sub2(a, b) {
+            console.log("두 수의 차는 : " + (a - b));
+
+        }
+
+        function multi2(a, b) {
+            console.log("두 수의 곱은 : " + (a * b));
+
+        }
+
+        function div2(a, b) {
+            console.log("두 수를 나눈 몫 : " + (a / b));
+
+        }
+
+        add2(10, 5);
+        sub2(10, 5);
+        multi2(10, 5);
+        div2(10, 5);
+
+        console.log("------3번 형태의 함수로 실행시------")
+        // 1번 함수 형태와 동일 하지만 return으로 함수 호출 시점으로 결과값을 돌려줌
+        function add3() {
+            var a = 10;
+            var b = 5;
+            return a + b; // 함수 호출 시점으로 결과 값을 돌려줌
+        }
+
+        function sub3() {
+            var a = 10;
+            var b = 5;
+            return a - b;
+        }
+
+        function multi3() {
+            var a = 10;
+            var b = 5;
+            return a * b;
+        }
+
+        function div3() {
+            var a = 10;
+            var b = 5;
+            return a / b;
+        }
+
+
+        var add3Result = add3(); // add3함수를 add3Result변수에 대입해줌.(여러 곳에 함수를 대입하기 위함)
+        console.log("두 수의 합 : " + add3Result);
+        // console.log("두 수의 합 : " + add3()); 이런식으로 간략화 시켜도 된다.
+
+        var sub3Result = sub3();
+        console.log("두 수의 차 : " + sub3Result);
+
+        var multi3Result = multi3();
+        console.log("두 수의 곱 : " + multi3Result);
+
+        var div3Result = div3();
+        console.log("두 수의 합 : " + div3Result);
+
+        console.log("------4번 형태의 함수로 실행시------")
+        // 2번 + 3번 형태의 함수
+        function add4(a, b) {
+            return a + b;
+        }
+
+        function sub4(a, b) {
+            return a - b;
+        }
+
+        function multi4(a, b) {
+            return a * b;
+        }
+
+        function div4(a, b) {
+            return a / b;
+        }
+
+        var add4Result = add4(10, 5);
+        console.log("두 수의 합 : " + add4Result);
+
+        var sub4Result = sub4(10, 5);
+        console.log("두 수의 차 : " + sub4Result);
+
+        var multi4Result = multi4(10, 5);
+        console.log("두 수의 곱 : " + multi4Result);
+
+        var div4Result = div4(10, 5);
+        console.log("두 수의 합 : " + div4Result);
+
+        // 문제 4) 사용자 입력(숫자)를 받아서 해당 하는 단수의 구구단을 출력하는 프로그램을 작성하세요
+        // 구구단 부분이 함수로 만들어져야함
+        console.log(" ")
+        console.log("---------문제4-----------")
+
+
+
+        function ex4() {
+            while (a < 10) {
+                console.log("===" + a + "단===");
+                var num = 1;
+                while (num < 10) {
+                    console.log(a + " X " + num + " = " + (a * num));
+                    num++;
+                }
+                break;
+            }
+        }
+        var a = prompt("단수를 입력하세요")
+        a = Number(a);
+        ex4();
+
+
+        console.log("\n")
+
+        // 선생님 풀이.
+        function gugudan(dan) {
+            for (var i = 1; i < 10; i++) {
+                console.log(dan + " * " + i + " = " + (dan * i));
+            }
+        }
+        var dan = prompt("출력할 구구단 단수를 입력하세요", "5");
+        gugudan(dan);
+
+
+        console.log(" ")
+        console.log("---------문제5-----------")
+        // 문제 5) 매개변수를 3개를 받는 함수 하나를 생성하여 입력된 기호에 따라 사칙연산을 진행하는 프로그램을 작성하세요
+        // 첫번째, 두번째 매개변수는 계산할 데이터
+        // 세번째 매개변수는 사칙연산을 위한 기호
+        // else if () 사용
+        
+
+        function result() {
+            if (input2 == "+")
+                console.log(input1 + " + " + input3 + " = " + (input1 + input3))
+            else if (input2 == "-")
+                console.log(input1 + " - " + input3 + " = " + (input1 - input3))
+            else if (input2 == "*")
+                console.log(input1 + " X " + input3 + " = " + (input1 * input3))
+            else if (input2 == "/")
+                console.log(input1 + " / " + input3 + " = " + (input1 / input3))
+            else {
+                console.log("잘못입력하셨습니다.")
+            }
+        }
+        var input1 = prompt("첫번째 숫자를 입력하세요");
+        input1 = Number(input1);
+
+        var input2 = prompt("기호를 입력하세요");
+
+        var input3 = prompt("두번째 숫자를 입력하세요");
+        input3 = Number(input3);
+        result();
+
+
+
+        //선생님 풀이. 
+        function cal(a, b, flag){
+            var c = 0;
+            switch (flag) {
+                case "+":
+                c = a + b;
+                break;
+                case "-":
+                c = a - b;
+                break;
+                case "*":
+                c = a * b;
+                break;
+                case "/":
+                c = a / b;
+                break;
+                                                          
+            }
+        }
+        var num1 = prompt("첫번째 숫자를 입력하세요", "100");
+        var num2 = prompt("두번째 숫자를 입력하세요", "5")
+        var flag = prompt("사칙연산 중 원하는 계산을 선택하세요 (+,-,*,/)", "+");
+
+        num1 = Number(num1);
+        num2 = Number(num2);
+
+        var result1 = cal(num1, num2, flag);
+        console.log("두 수의 '" + flag + "'계산결과는" + result1 + "입니다.");
+
+
+
+        // prompt() : 입력되는 모든 데이터를 문자열로 받음
+        // Number(), parseInt() : 문자열 타입의 숫자를 숫자타입으로 변환
+
+        // var 변수명 = Number(숫자인 문자열)
+        // var num1 = prompt("숫자입력");
+        // num1 = Number(num1);
+
+
+        console.log("\n\n--------전역 함수----------\n")
+
+        var num = prompt("숫자를 입력하세요");
+        // isNaN() 은 숫자가 아니면 true
+        if (isNaN(num) == true){
+            // 숫자가 아닐때
+            console.log("숫자가 입력되지 않았습니다.");
+        }
+        else {
+            // 숫자일때
+            num = parseInt(num);
+            // num = Number(num); 위와 같음
+            console.log(num * num);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
