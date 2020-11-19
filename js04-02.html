@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 4-2</title>
+    <script>
+        // 함수
+        // 함수란 특정한 목적을 가지고 실행되는 소스코드들 끼리 묶어놓은 코드블럭
+
+        // 함수의 선언
+        // function 함수명(매개변수1, 매개변수2, ....) {
+        //     실행할 소스코드들 ....
+        //     return 반환값
+        // }
+
+        // 함수의 실행
+        // 함수명(매개변수1, 매개변수2, .....);
+
+        // 함수의 형태 4가지
+        // 1. 매개변수와 반환값이 모두 없는 함수
+        // 2. 매개변수는 존재하고, 반환값이 없는 함수
+        // 3. 매개변수는 없고, 반환값이 존재하는 함수
+        // 3. 매개변수와 반환값이 모두 존재하는 함수
+
+        var a = 10;
+        var b = 20;
+
+        console.log(a + b);
+
+        function sum() {
+            var a = 10;
+            var b = 20;
+            console.log(a + b);
+        }
+        sum();
+
+        function multi() {
+            var a = 10;
+            var b = 5;
+
+            console.log(a * b);
+        }
+
+        sum();
+        multi();
+    </script>
+</head>
+
+<body>
+    <button id="btn_sum">더하기</button>
+    <button id="btn_multi">곱하기</button>
+
+    <script>
+        var btnSum = document.getElementById("btn_sum");
+        var btnMulti = document.getElementById("btn_multi")
+
+        btnSum.addEventListener("click", function() {
+            sum();
+        });
+        btnMulti.addEventListener("click", function(){
+            multi();
+        });
+
+    </script>
+</body>
+
+</html>
