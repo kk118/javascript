@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 3-1</title>
+    <script>
+        var fruits = "사과";
+        var price = 0;
+        switch (fruits) {
+            case "바나나":
+                price = 200;
+                break;
+
+            case "사과":
+                price = 300;
+                break;
+
+            case "체리":
+                price = 400;
+                break;
+
+            default:
+                //case에 원하는 것이 없을 경우 실행, else if 문의 else 와 동일, 생략가능
+                console.log("팔지 않습니다.")
+                price = 0;
+        }
+        console.log(0);
+        console.log("----------------------------");
+        var fruits = "사과";
+        var price = 0;
+
+        if (fruits == "바나나") {
+            price = 200;
+        } else if (fruits == "사과") {
+            price = 300;
+        } else if (fruits == "체리") {
+            price = 400;
+        } else {
+            price = 0;
+            console.log("팔지 않습니다.");
+        }
+        console.log(price);
+
+        console.log("--------------------");
+
+        // new Date().getDay(); 오늘 날짜의 요일을 수자 0 ~ 6으로 표현해 줌
+        var day = new Date().getDay();
+        var toDay = "";
+        switch (day) {
+            case 1:
+            toDay = "월요일";
+            break;
+            
+            case 2:
+            toDay = "화요일";
+            break;
+            
+            case 3:
+            toDay = "수요일";
+            break;
+            
+            case 4:
+            toDay = "목요일";
+            break;
+            
+            case 5: 
+            toDay = "금요일";
+            break;
+
+            default:
+            toDay = "주말";
+            break;
+        }
+        console.log("오늘은 " + toDay + "입니다.");
+
+        // 문제 1) 위의 요일 입력하는 부분을 사용자가 날짜를 입력하면 해당하는 요일이 출력되는 프로그램을 작성하세요
+        // else if 문으로 작성하세요
+        // 사용자 입력 방식 "2020-11-17"
+        var input = prompt ("날짜를 입력하세요", "2020-00-00");
+        var day = new Date(input).getDay();
+        console.log(day)
+        var toDay = ""; // 한글로 요일 정보를 입력
+        if(day==1){
+            toDay = "월"
+        }
+        else if(day==2){
+            toDay = "화"
+        }
+        else if(day == 3){
+            toDay = "수"
+        }
+        else if(day == 4){
+            toDay = "목"
+        }
+        else if(day == 5){
+            toDay = "금"
+        }
+        else{
+            toDay = "주말"
+
+        }
+        console.log("입력하신 날짜 "+ input + "은 " + toDay + "요일 입니다.")
+    
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

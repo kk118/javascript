@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 1-1</title>
+
+    <script>
+        // javascript 사용방법
+        //1. inline 방식
+        //html 태그에 직접 소스 코드 입력
+        //2. script 태그 사용
+        //html 문서 내에 <script> 태그 사용 후 소스 코드 입력
+        //3.외부 javascript 파일 로드 
+        // 확장자 명이 js 인 파일을 생성 후 해당 파일에 소스 코드 입력
+        //해당 파일 <script> 태그를 통하여 로드하여 사용
+
+        function over(obj) {
+            obj.src = "./images/펭수05.jpg"
+        }
+
+        function out(obj) {
+            obj.src = "./images/스펀지밥02.jpg"
+        }
+    </script>
+
+    <!-- <script src="./lib.js"></script> -->
+</head>
+
+<body>
+    <h3>javascript 사용 방법</h3>
+
+    <h4>inline 방식</h4>
+    <img src="./images/펭수05.jpg" alt="" onmouseover="this.src='./images/펭수02.jpg'"
+        onmouseout="this.src='./images/펭수05.jpg'">
+
+    <br><br>
+
+    <h4>script 태그 사용 방식 1번</h4>
+    <img src="./images/스펀지밥 뚱이.gif" alt="" onmouseover="over(this)" onmouseout="out(this)">
+
+    <hr>
+
+    <h4>script 태그 사용 방식 2번</h4>
+    <img id="img3" src="./images/스펀지밥 뚱이.gif" alt="">
+
+    <br><hr><br>
+
+    <h4>외부 javascript 파일 로딩 1</h4>
+    <img src="./images/스펀지밥 뚱이.gif" alt="" onmouseover="over2(this)" onmouseout="out2(this)">
+
+    <br><hr><br>
+    
+    <h4>외부 javascript 파일 로딩 2</h4>
+    <img id="img4" src="./images/스펀지밥02.jpg" alt="" >
+
+
+    <script>
+        // var : 변수선언 키워드
+        // document : html문서
+        //getElementById : ID값이 "img3"html 태그찾기
+        var img3 = document.getElementById("img3");
+
+        img3.addEventListener("mouseover", function () {
+            this.src = "./images/스펀지밥 뚱이.gif"
+        });//addEventListener : 이벤트 등록 
+        img3.addEventListener("mouseout", function () {
+            this.src = "./images/스펀지밥02.jpg"
+        });
+    </script>
+
+    <script src="./lib.js"></script>
+</body>
+
+</html>

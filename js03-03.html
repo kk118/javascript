@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 3-3</title>
+    <script>
+        // while문
+        // for문과 함께 널리 사용되는 반복문
+        // for문과는 달리 초기화변수가 while문 밖에 존재하고, 변수 카운트 부분이 반복 코드블럭 내에 존재함
+
+        // var 초기화변수
+        // while (조건식)
+        // {
+        //         반복할 소스코드
+        //         초기화변수 카운트
+        // }
+
+        var count = 0;
+
+        while(count < 10){
+            console.log(count);
+            count++;
+        }
+        console.log("---------문제---------")
+        // 문제 ) 1 ~ 10까지의 합을 출력하는 프로그램을 while문을 통해서 작성하세요
+
+        var count1 = 0;
+        var result = 0;
+        while(count1 <= 10){
+            result = count1 + count1;
+            console.log(count1 + " + " + count1 + " = " + result)
+            count1++;
+        }
+
+        console.log("---------NaN-----------")
+ 
+        var aaa;
+        console.log(aaa); //nudefined
+        console.log(aaa + 10); //NaN 출력
+        // NaN 이란?
+        // Not a Number 의 줄임말로써 javascript에서 존재하는 숫자가 아니라는 의미의 타입
+        
+        console.log("----------do ~ while문---------")
+
+        // do ~ while문
+        // while문과 기본적으로 동일하지만 무조건 1번은 실행을 하는 반복문 
+
+        // var 초기화변수;
+        // do {
+        //     반복 실행할 소스코드
+        //     초기화 변수 카운트
+        // } while(조건식);     
+
+        var count = 0;
+        do{ // 먼저 아래 코드를 실행한후 while문을 실행함
+            console.log(" do ~ while 사용시 : " + count)
+            count++;
+        } while (count > 10);
+
+        console.log("-------")
+        
+        var count2 = 0;
+        while(count2 < 10){ //조건문이true로 성립해야 실행됨
+            console.log(" while 사용시 : " + count2);
+            count2++;
+        }
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

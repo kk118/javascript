@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 1-3</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", function(){
+            document.write("<h3>Welcome!<h3>");
+            document.write("2 + 5 는 <br>");
+            document.write("<mark>7 입니다</mark>");
+
+            var ret = prompt("이름을 입력하세요");
+                if(ret == null) {
+                    alert("이름을 입력하세요");
+                }
+                else if(ret == ""){
+                    alert("이름을 입력하세요");
+                }
+                else {
+                    alert("이름은" + ret + "입니다.");
+                }
+
+            var ret2 = confirm("전송할까요?");
+                alert(ret2);
+                if(ret2 == true) {
+                    document.write("<p>네, 전송하세요.</p>")
+                }
+                else {
+                    document.write("<p>아니요</p>")
+                }
+                alert("클릭하였습니다.");
+
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

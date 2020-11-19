@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 3-2</title>
+    <script>
+        // 반복문
+        // for, (for ~ in), while, do ~ while
+        // javascript에서 특정한 코드블럭을 반복적으로 실행할때 사용하는 명령어 
+        // for 문 : 반복 조건이 거짓으로 판단 될 때까지 코드블럭을 반복 실행하는 반복문
+        // 초기화 변수, 반복조건, 변수의 카운트까지 한곳에 입력하여 설정하는 방식 
+
+        // for (초기화 변수; 반복조건 ; 변수 카운트)
+            // {
+            //      반복 실행될 소스 코드;
+            // };
+        for(var i = 0; i < 10; i++){
+            console.log(i);
+        }
+
+        console.log("--------------");
+
+        var result = 0;
+        for(var i = 1; i <= 10; i++){
+            result = result + i;
+           
+        }
+        console.log(result)
+
+        console.log("--------------");
+
+        for(var size = 10; size <= 35; size += 5){
+            document.write("<span ");
+            document.write("style='font-size:" + size + "px'>");
+            // <span style = font-size : 10 px >
+            document.write(size + "px");
+            document.write("</span>");
+            document.write("<br>");
+        }
+
+        console.log("-----구구단-----")
+        var dan = 5;
+        for (var i = 2; i < 10; i++){
+            console.log(dan + " * " + i + " = " + (dan * i));
+        }
+
+        console.log("--------입력하여 구구단---------")
+
+        // 문제 2) 사용자 입력을 통해서 원하는 단수의 구구단을 출력하세요
+        var input = prompt();
+        var dan2 = input;
+        for ( var i = 2; i < 10; i++){
+            document.write(dan2 + " X " + i + " = " + (dan2 * i) + "<br>");
+            console.log(dan2 + " X " + i + " = " + (dan2 * i));
+        }
+
+        // 문제 3) 아래의 형태를 출력하는 프로그램을 작성하세요 
+        // for 문을 사용하여 출력하세요 
+        // * 는 문자열임
+        // **
+        // ***
+        // ****
+        // *****
+        // 변수는 제약이 없음, 어떤 타입이든 데이터 저장 가능(int,string...)
+        
+      
+        // for(var i = 0; i < 6; i++){
+        //     for(var j = 1; j <= i; j++){
+        //     // 
+        //     console.log( "*")
+        //     document.write("*");
+        //     }
+        //     // console.log("<br>")
+        //     document.write("<br>")
+        // }
+
+        // var result; undefined 타입하고 연산을 진행할 경우 오류가 발생할 가능성이 높다,
+        var result = "";// 변수 result에 빈 문자열("")이 저장되면서 데이터 자체는 비어있지만 변수의 타입이 문자열 타입으로 변경됨
+
+        for(var i = 0; i < 5; i++){
+            result += "*";// 대입연산자 우선순위가 가장느림 result = result + "*"
+            console.log(result);2
+           
+            document.write(result);
+            document.write("<br>");
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
