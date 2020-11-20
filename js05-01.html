@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 5-1</title>
+    <script>
+        //객체 : 데이터 타입 사용, 객체지향언어(class)
+        // 프로퍼티 : 하나의 이름을 가지고 있으며 여려가지 변수와 함수 구성으로 되어있음(변수, 함수) 
+        
+        var today = new Date();
+        var msg = new String("Hello");
+        console.log(msg + "\t" + today)
+        console.log(msg)
+
+        //Date 객체 생성
+        var today = new Date();
+        console.log("현재시간 : " + today.toUTCString());
+        // 현재 시간을 기준으로하여 시간 관련 객체를 생성하고 변수 today에 대입
+        // toGMTString() 함수는 현재 사용되지 않음 
+        // https://developer.mozilla.org
+
+
+        var myStr = new String("javascript 공부하기");
+        console.log("myStr의 내용 : " + myStr);
+        console.log("myStr의 길이 : " + myStr.length);
+        // new 키워드를 사용하여 문자열 객체를 생성하고 변수 myStr에 대입
+        // String 객체는 기본 데이터 타입에 해당하기 때문에 사용성의 문제로 인하여 new키워드를 사용하지 않고 "" 를 사용해도 String 객체로 인식함
+
+        var myStr2 = "javascript 공부하기";
+        console.log("myStr2의 내용 : " + myStr2);
+        console.log("myStr2의 길이 : " + myStr2.length);
+
+        // 배열 - 하나의 이름으로 여러개의 데이터를 저장하는 데이터타입
+            // 각각의 데이터 구분을 위해 index번호가 부여됨
+        // 배열 크기 - 고정되지 않고, 자동으로 크기가 커짐. 자바와 같은 다른언어는 배열의 크기를 미리 정하고 사용
+
+        console.log("\n-------------배열 사용하기----------------\n");
+        var plots = [20, 5, 8, 15, 20];//배열의 길이가 5인 배열선언, 선언과 동시에 20, 5, 8, 15, 20을 저장 
+        console.log("var plots = [20, 5, 8, 15, 20]");
+        // 반복문 배열과 궁합이 좋음
+        for (var i = 0; i < 5; i++){
+            var size = plots[i];
+            var tmp = "";
+            
+            while(size > 0){
+                tmp = tmp + "*";
+                
+                size--;
+            }
+         
+            console.log(tmp + " " + plots[i])
+        }
+        console.log(" \n\n ");
+
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // numbers라는 이름의 배열인 변수가 선언됨가 동시에 데이터를 저장함
+        
+        console.log(numbers);
+
+        console.log(numbers[4]);
+
+        numbers[4] = 100;//배열 데이터 변경
+        console.log(numbers[4]);
+
+        // 배열 : 하나의 변수명으로 여러개의 데이터를 저장할 수 있는 데이터 타입
+            //각각의 데이터를 구분하기 위해서 index 번호를 사용함
+            //index는 0부터 시작
+            // 배열을 효과적으로 사용하기 위한 여러가지 함수들을 제공함
+            // javascript의 배열의 크기가 
+        // 배열의 기호 : '[]'를 사용, 각각의 데이터 구분은 ','를 사용
+
+        // 배열의 선언 방법
+        // var 배열명 = [];
+        // var 배열명 = [데이터1, 데이터2, 데이터3]; //배열 선언과 동시에 데이터를 입력
+
+        // 배열에 데이터 입력
+        // 배열명[index] = 데이터;
+
+        // 배열에서 데이터 출력
+        // 배열명[index];
+        // console.log(배열명[index]);
+
+        // 일반적인 선언 형태
+        var arr = [1, 2, 3];
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+
+        var arr1 = [];
+
+        console.log(arr.length);
+        console.log(arr1.length);
+        
+        console.log(arr[2]); // 데이터가 존재하는 배열이라도 해당 배열의 최대 index보다 큰 index의 데이터를 출력하려고 하면 오류가 발생함
+        console.log(arr1[0]); // undefined라고 출력되는 이유는 arr1 가 빈 배열이기 때문에 index가 없음
+
+        // 현제 arr[3], arr[4] 은 존재하지 않음
+        // 아래와 같이 arr[3], arr[4]에 데이터를 입력 시 배열 arr의 크기가 5로 커짐
+        // 자바스크립트는 배열의 크기를 자동으로 변경할 수 있음
+        arr[3] = 40;
+        arr[4] = 50;
+        console.log(arr)
+        console.log(arr[3]);
+        console.log(arr[4]);
+
+        arr1[0] = 100;
+        arr1[1] = 200;
+        arr1[2] = 300;
+        arr1[3] = 400;
+        arr1[4] = 500;
+
+        
+        console.log(arr1)
+        console.log("arr1의 길이 : " + arr1.length);
+        console.log(arr1[0]);
+        console.log(arr1[4]);
+
+        console.log("\n============배열의 함수============\n")
+
+        var fruts = ["바나나", "오랜지", "사과", "망고"]
+
+        // javascript의 기본 속성 및 함수
+        // lenght : 해당 배열의 길이를 알려줌
+            // 배열명.lenght
+        console.log("배열 fruts의 길이 : " + fruts.length);
+
+        // toString() : 배열의 데이터를 문자열로 출력함
+            // 배열명.toString()
+        console.log("배열 fruts의 내용 전부 출력 : " + fruts.toString());
+        // join() : 배열의 데이터를 문자열로 출력하고, 사용자가 원하는 문자를 추가하여 출력가능
+        console.log("배열 fruts의 내용 전부 출력 : " + fruts.join("&"));
+        // push() : 해당 배열의 가장 마지막에 데이터를 추가함
+            // 배열명.push(추가할 데이터)
+        fruts.push("파인애플")
+        console.log("push() 사용 후 배열 : " + fruts);
+            
+        // pop() : 해당 배열의 가장 마지막 데이터를 삭제함
+            // 배열명.pop()
+        fruts.pop();
+        fruts.pop();
+        fruts.pop();
+        console.log("pop() 사용 후 배열 : " + fruts);
+
+       // unshift() : 해당 배열의 가장 첫번째 index에 데이터를 추가함, 추가 전 전체 index번호를 1칸 뒤로 이동
+            // 배열명.unshift(추가할데이터)
+        fruts.unshift("사과");
+        fruts.unshift("배");
+        fruts.unshift("복숭아");
+        fruts.unshift("수박");
+        fruts.unshift("참외");
+        console.log("unshift() 사용 후 배열 : " + fruts);
+       
+        // shift() : 해당 배열의 가장 첫번째 데이터를 삭제함, 삭제 후 전체 index번호를 앞으로 이동
+            // 배열명.shift()
+        fruts.shift();
+        fruts.shift();
+        console.log("shift 사용 후 배열 : " + fruts);
+       
+        // splice() : 해당 배열의 특정 index의 데이터를 추가하거나 삭제함, 데이터 교체를 위해서 사용
+            // 배열명.splice(데이터가 입력될 index, 삭제할 데이터 수, 데이터1, 데이터2, ....);
+        var fruts = ["바나나", "오렌지", "사과", "망고"]
+        console.log("원본 배열 fruts : " + fruts);
+        fruts.splice(2, 1, "파인애플", "키위");
+        // fruts.splice(2, 1) 원하는 위치에서 데이터 삭제
+        // fruts.splice(2, 0 "두리안", "자몽"); 원하는 위치에서 데이터를 추가함
+        console.log("splice 사용 후 배열 : " + fruts);
+
+        // delete : 원하는 위치의 데이터를 삭제, 배열에 delete 를 사용 시 해당 배열의 지정한 위치의 index가 데이터만 삭제되고 index는 그대로 살아있음, 반복문 등에 사용할때 오류발생 할수있음, 최대한 사용을 자제함
+        // delete fruts[2];
+        // console.log("delete 사용 후 배열 : ");
+        // console.log(fruts);
+        // console.log(fruts[2]);
+
+        // slice() : 해당 배열의 일정 부분을 잘라내여 새로운 배열로 만듬
+            // 배열명.slice(index);
+            // 배열명.slice(시작index, 끝index-1);
+        var fr = fruts.slice(3);
+        console.log("slice 사용 후 새 배열 fr : " + fr);
+        console.log("slice 사용 후 기존의 배열 fruts : " + fruts);
+        
+        var fr2 = fruts.slice(1, 3);
+        console.log("slice 사용 후 새 배열 fr2 : " + fr2);
+        
+        // concat() : 2개 이상의 배열을 하나의 배열로 합함, 기존의 배열은 그대로 , 신규 배열을 만들어서 반환
+            // 배열명.concat(배열명1, 배열명2, ....)
+        var fr1 = ["사과", "복숭아", "배"];
+        var fr2 = ["파인애플", "자몽", "체리"]
+        var fr3 = fr1.concat(fr2);
+
+        console.log("국내 과일 배열 : " + fr1);
+        console.log("해외 과일 배열 : " + fr2)
+        console.log("concat 사용 후 새 배열 fr3 : " + fr3);
+
+        // sort() : 배열에 저장된 데이터를 알파벳 순서대로 정렬함
+        var fruts = ["banana", "orange", "apple", "mango"]
+        console.log(fruts.toString());
+        console.log(fruts.sort());
+        console.log(fruts.toString());
+
+        // reverse() : 배열에 저장된 데이터의 순서에서 반대로 반전함, 정렬을 하지 않고 순서만 반대로 전환함.
+        fruts.reverse();
+        console.log(fruts)
+
+        console.log("\n-----------Array 객체로 배열사용------------\n")
+
+        var degrees = new Array();
+        //빈 배열 서열후 아래 데이터 추가, 또는 배열 선언과 동시에 데이터 추가.
+        degrees[0] = 15.1;
+        degrees[1] = 15.4;
+        degrees[2] = 16.1;
+        degrees[3] = 17.5;
+        degrees[4] = 19.2;
+        degrees[5] = 21.4;
+        // var degrees = [15.1, 15.4, 16.1, 17.5, 19.2, 21.4]
+
+        // var degrees = new Array(15.1, 15.4, 16.1, 17.5, 19.2, 21.4)
+
+        
+        // javascript는 크기가 자동으로 변경됨, index를 입력해서 데이터 추가시 배열의 길이가 늘어남.
+        var sum = 0;
+        for(i = 0; i < degrees.length; i++){
+            sum += degrees[i];
+        }
+        console.log("평균 온도는 " + sum / degrees.length);
+
+
+        console.log("\n-------배열의 요소로 저장가능한 데이터 타입------\n")
+        // 자바스크립트는 변수의 데이터 타입을 데이터가 저장되는 시점에서 구분함 (배열도 동일하게 속성을 가져감) 배열의 각각의 요소에 모든 데이터 타입을 저장할 수 있음
+
+        function convertFunction() { 
+            console.log("convertFuntion 함수");
+        }
+
+        var any = [];
+        any[0] = 0;//정수 Number타입
+        any[1] = 5.5;//실수 Number 타입
+        any[2] = "이미지 백터";// 문자열
+        any[3] = new Date();//내장 객체
+        any[4] = convertFunction;//함수
+        any[5] = [1, 2, 3, 4, 5];//배열
+        any[6] = {name : "말리부", color : "검정", type : "세단"};//객체 object타입
+
+        console.log("정수 Number타입 : " + any[0]);
+        console.log("실수 Number타입 : " + any[1]);
+        console.log("문자열 타입 : " + any[2]);
+        console.log("내장 객체 타입 : " + any[3]);
+        console.log("함수 타입 : " + any[4]);
+        console.log("배열 타입 : " + any[5]);
+        console.log("객체 object타입 : " + any[6]);
+        console.log("전체 : " + any);
+
+        
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
